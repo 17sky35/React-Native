@@ -24,8 +24,9 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser		Y
 press
 onClick과 가장 비슷한 이벤트
 
-onPressIn>onPressOut>onPress또는
-onPressIn>onLongPress>onPressOut>onPress
+onPressIn>onPress>onPressOut또는
+onPressIn>onLongPress>onPressOut
+onLongPress이랑 onPress는 같이작업되지않는다.
 
 change이벤트
 변화를 감지하는 이벤트
