@@ -3,5 +3,5 @@ export const theme = {
     itemBackground:"#555555",
     main:"#778bdd",
     text:"#cdcdcd",
-    done:"#616161"
+    done:"#010101"
 }
