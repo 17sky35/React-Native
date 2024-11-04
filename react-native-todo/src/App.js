@@ -3,8 +3,6 @@ import { theme } from "./theme";
 import styled,{ThemeProvider} from "styled-components";
 import { StatusBar, Dimensions } from "react-native";
 import Input from "./components/Input";
-import IconButton from "./components/IconButton";
-import { images } from "./image";
 import Task from "./components/Task";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as SplashScreen from 'expo-splash-screen'
@@ -31,6 +29,7 @@ export default function App(){
     const [newTask,setNewTask] = useState("");
     const [tasks,setTasks] = useState({})
 
+    //내용을 저장하는 메서드
     const _saveTasks = async tasks => {
         try {
             //JSON.stringify : 문자열을 JSON 형식으로 변환
@@ -100,7 +99,7 @@ export default function App(){
     
     useEffect (()=>{
         _loadTask();
-    },[])
+    },[tasks])
 
     return (
         <ThemeProvider theme={theme}>

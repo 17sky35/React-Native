@@ -1,11 +1,9 @@
 import React from "react";
-import { View,Text } from "react-native";
 import Calculator from "./components/Calculator";
+import ChangeColor from "./components/ChangeColor";
 
 export default function App(){
     return(
-        <View>
-            <Calculator/>
-        </View>
+        <ChangeColor/>
     )
 }

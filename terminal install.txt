@@ -1,0 +1,4 @@
+styled
+npm install styled-components 설치안될 때npm install styled-components@5.3.6 --legacy-peer-deps
+AsyncStorage
+expo install @react-native-community/async-storage
