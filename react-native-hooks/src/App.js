@@ -8,6 +8,7 @@ import Length from "./components/Length";
 import Dog from "./components/Dog";
 import MakeBread from "./components/makeBread";
 import { ScrollView } from "react-native";
+import ScrollComponent from "./components/ScrollComponent";
 
 const Container = styled.View`
     flex:1;
@@ -32,6 +33,7 @@ export default AppRegistry=()=>{
                 <Length />
                 <Dog />
                 <MakeBread />
+                <ScrollComponent />
             </Container>
         </ScrollView>
     )

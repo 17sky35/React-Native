@@ -1,3 +1,5 @@
+파일이름 한글로 적지말것.
+
 Expo CLI 설치
 npm install -g expo-cli 설치안될때
 
