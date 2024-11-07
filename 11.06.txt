@@ -59,8 +59,14 @@ data : 리스트에 표시할 데이터 배열
 renderItem : 각 아이템을 어떻게 렌더링할지 정의하는 함수
 ketExtractor : 각 아이템의 고유한 키 값을 지정하는 속성
 
+3. 사용자 로그인 상태 관리
+UserContext로 로그인 상태를 관리
 
+HomeScreenjs에서 로그인 되었으면 
+Welcome,홍길동님
+로그아웃 버튼
 
+로그인버튼
 
 
 
