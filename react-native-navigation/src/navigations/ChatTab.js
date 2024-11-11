@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {MaterialCommunityIcons} from "@expo/vector-icons"
-import { FriendScreen,ChatListScreen,SettingsScreen } from "../screens/Tab/ChatTabScreens";
+import { FriendScreen,SettingsScreen } from "../screens/Tab/ChatTabScreens";
 import ChatStack from "./ChatStack";
 
 const Tab = createBottomTabNavigator();
