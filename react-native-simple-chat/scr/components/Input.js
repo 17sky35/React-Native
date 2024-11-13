@@ -55,24 +55,24 @@ const Input = forwardRef(
       <Container>
         <Label isFocused={isFocused}>{label}</Label>
         <StyledTextInput
-          ref={ref}
-          isFocused={isFocused}
-          value={value}
-          onChangeText={onChangeText}
-          onSubmitEditing={onSubmitEditing}
+          ref={ref} //Login에서 정의된 useRef를 전달
+          isFocused={isFocused}//해당 Input이 포커스가 된 상태냐
+          value={value}//호출한쪽에서 넘어온 값
+          onChangeText={onChangeText}//호출한쪽에서 넘어온 함수
+          onSubmitEditing={onSubmitEditing}//호출한쪽에서 넘어온 함수
           onFocus={() => setIsFocused(true)}//input태그에 포커스가 잡혔을 때 실행
           onBlur={() => {//포커스가 해제됐을 때 실행되는 함수
             setIsFocused(false);
-            onBlur();
+            onBlur();//PropType에 디폴트로 설정한 값이 실행
           }}
           placeholder={placeholder}
-          secureTextEntry={isPassword}
+          secureTextEntry={isPassword} //비밀번호면 ●로 표시
           returnKeyType={returnKeyType}//키보드에서 완료버튼이 어떤것으로 보일것인지
           maxLength={maxLength}//input태그에 최대 몇글자까지 할 것인지
           autoCapitalize="none"//첫번째 입력글자 대문자
-          autoCorrect={false}
-          textContentType="none" //iOS only
-          underlineColorAndroid="transparent" //Android only
+          autoCorrect={false}//자동완성 안뜨게
+          textContentType="none" //iOS에서만 사용하는 옵션,옵션에따라 뜨는 키보드가 달라짐
+          underlineColorAndroid="transparent" //Android only 컴포넌트의 밑줄 색상을 설정할 때 사용
         />
       </Container>
     );
