@@ -31,7 +31,7 @@ const Button = ({containerStyle, title, onPress,disabled, isFilled}) => {
         </Container>
     )
 }
-//isFillde를 넘겨받지 않으면 기본값으로 true를 넣는다.
+//isFilled를 넘겨받지 않으면 기본값으로 true를 넣는다.
 Button.defaultProps = {
     isFilled:true,
 }

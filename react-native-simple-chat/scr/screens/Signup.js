@@ -1,10 +1,12 @@
-import React,{useState,useRef,useEffect} from "react";
+import React,{useState,useRef,useEffect, useContext} from "react";
 import styled from "styled-components";
-import { Text } from "react-native";
 import { Image,Input,Button } from "../components/index";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { validateEmail,removeWhitespace } from "../utils/common";
 import { images } from "../utils/images";
+import { signup } from "../utils/firebase";
+import { Alert } from "react-native";
+import {ProgressContext,UserContext} from "../contexts/index"
 
 const Container = styled.View`
     flex:1;
@@ -36,6 +38,9 @@ const Signup = () => {
     const passwordConfirmRef = useRef();
     const didMountRef = useRef();
 
+    const {spinner} = useContext(ProgressContext);
+    const {dispatch} = useContext(UserContext);
+
     useEffect (()=> {
         if(didMountRef.current){
             let _errMessage="";
@@ -56,14 +61,27 @@ const Signup = () => {
         }        
     },[name,email,password,passwordConfirm])
 
+    //가입버튼 활성화 조건
     useEffect(()=>{
         setDisabled(
             !(name&&email&&password&&passwordConfirm&&!errorMessage)
         )
     },[name,email,password,passwordConfirm,errorMessage])
-    const _handleSignupButtonPress = () => {
-        
-    }
+
+    //회원가입 버튼
+    const _handleSignupButtonPress = async () => {
+        try {
+            spinner.start();
+            const user = await signup({email,password,name,photoUrl});
+            console.log(user);
+            dispatch(user);
+            Alert.alert("Signup Success",user.email);
+        } catch (error) {
+            Alert.alert("Signup Error", error.message);            
+        }finally{
+            spinner.stop();
+        }
+    };
 
     return(
         <KeyboardAwareScrollView
@@ -71,6 +89,7 @@ const Signup = () => {
             extraHeight={20}
         >
             <Container>
+                {/* 프로필 사진 */}
                 <Image 
                     rounded 
                     url={photoUrl} 
