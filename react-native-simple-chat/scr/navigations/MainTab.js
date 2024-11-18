@@ -39,7 +39,7 @@ const MainTab = ({navigation,route}) => {
                 tabBatInactiveTintColor:theme.tabInactiveColor,
                 headerTitleAlign:"center",
             }}
-        >
+        >       
             <Tab.Screen 
                 name="Channels" 
                 component={ChannelList} 

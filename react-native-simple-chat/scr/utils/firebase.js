@@ -71,10 +71,13 @@ export const updateUserInfo = async photo => {
     await updateProfile(auth.currentUser,{photoUrl})
     return photoUrl;
 }
-const db = getFirestore(app);
+export const db = getFirestore(app);
 //새로운 채널을 생성하는 함수
+//매개변수로 제목과 설명을 얻어온다.
 export const createChannel = async({title,description}) => {
-    //Firestore에서 "channles" 컬렉션을 참조
+    //Firestore 데이터베이스에서 'channels'컬렉션에 접근
+    //db : firestore의 객체를 가리킨다.
+    //channels이라는 컬ㄹ렉션에 접근
     //collection(db,"channels");
     //데이터베이스 객체 db와 컬렉션 이름 channels를 입력받아 특정 컬렉션을 가리킨다.
     const channelCollection = collection(db,"channels");
@@ -98,4 +101,13 @@ export const createChannel = async({title,description}) => {
     await setDoc(newChannelRef,newChannel);
     //생성된 문서의 ID를 반환
     return id;
+}
+
+export const createMessage = async ({channelId,text}) => {
+    //특정 채널의 메시지 컬렉션 안에 새로운 메시지 문서의 레퍼런스를 생성
+    const docRef = doc(db,`channels/${channelId}/messages`,text);
+    //생성된 문서 레퍼런스에 메시지 데이터를 저장
+    //기존 메시지 객체의 모든 속성을 복사하고
+    //createdAt필드를 현재 시간으로 추가.
+    await setDoc(docRef,{...text, createdAt: Date.now() });
 }
