@@ -1,0 +1,85 @@
+expo를 이용해서 빌드를 했었는데 eas로 빌드를 하는것을 권장하는걸로 바뀌었다.
+EAS(Expo Application Service)
+expo앱을 빌드하고 배포하는 과정을 간소화 해주는 도구
+
+npm install -g eas-cli
+
+eas init -> eas.json
+
+eas.json
+빌드환경을 커스터마이징
+eas build --platform android --profile preview -> apk(android package 설치파일)
+어플리케이션을 배포하고 설치하기 위한 파일 형식
+
+스프링부트 파일 빌드 -> .jar
+
+------------------------------------------------------------------------------------------
+예전에는 개발자 취업하려면..혼자서 게시판 만들 줄 알면 된다.
+게시글 1개가 객체
+id, title, author,writingTime,content
+
+처음 접속 -> 게시글 목록
+게시슬 쓰기
+게시글 삭제
+게시글 수정
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
