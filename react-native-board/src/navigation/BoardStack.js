@@ -42,14 +42,7 @@ const BoardStack = () => {
                                 color="white" 
                             />
                         </Pressable>
-                    ),
-                    headerRight: () => (
-                        <Pressable style={{marginRight:20}}>
-                            <View style={styles.saveButton}>
-                                <Text style={styles.saveButtonText}>등록</Text>
-                            </View>
-                        </Pressable>
-                    ),
+                    )
                 })}
             />
         </stack.Navigator>
